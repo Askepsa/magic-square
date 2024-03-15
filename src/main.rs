@@ -47,22 +47,22 @@ impl MagicSquare {
                 val += 1;
             }
 
-            let col_top = col == 0;
-            let row_leftmost = row == 0;
+            let at_col_top = col == 0;
+            let at_row_leftmost = row == 0;
 
             let col_copy = col;
             let row_copy = row;
 
-            if col_top && !row_leftmost {
+            if at_col_top && !at_row_leftmost {
                 col = board_len;
                 row -= 1;
-            } else if !row_leftmost {
+            } else if !at_row_leftmost {
                 col -= 1;
                 row -= 1;
-            } else if row_leftmost && col_top {
+            } else if at_row_leftmost && at_col_top {
                 col = board_len;
                 row = board_len;
-            } else if row_leftmost && !col_top {
+            } else if at_row_leftmost && !at_col_top {
                 col -= 1;
                 row = board_len;
             }
