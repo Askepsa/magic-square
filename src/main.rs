@@ -9,21 +9,14 @@ struct MagicSquare {
 
 impl MagicSquare {
     pub fn new(n: usize) -> Self {
-        let mut vec: Vec<Vec<usize>> = Vec::with_capacity(n * n);
-
-        for _ in 0..n {
-            vec.push(vec![0; n]);
-        }
-
         Self {
             board_size: n,
-            board: vec,
+            board: vec![vec![0; n]; n],
         }
     }
 
     fn print_board(&self) {
         thread::sleep(Duration::from_millis(800));
-
         println!("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
         for v in self.board.iter() {
             for vv in v.iter() {
@@ -56,6 +49,7 @@ impl MagicSquare {
 
             let col_top = col == 0;
             let row_leftmost = row == 0;
+
             let col_copy = col;
             let row_copy = row;
 
