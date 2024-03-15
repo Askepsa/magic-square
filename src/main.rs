@@ -16,15 +16,15 @@ impl MagicSquare {
     }
 
     fn print_board(&self) {
-        thread::sleep(Duration::from_millis(800));
-        println!("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
+        thread::sleep(Duration::from_millis(50));
+        println!("{}", "\n".repeat(15));
         for v in self.board.iter() {
             for vv in v.iter() {
                 print!("{:>4} ", vv);
             }
             println!();
         }
-        println!("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
+        println!("{}", "\n".repeat(7));
     }
 
     pub fn perform(&mut self) {
